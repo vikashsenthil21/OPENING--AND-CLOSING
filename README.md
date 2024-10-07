@@ -7,74 +7,85 @@ To implement Opening and Closing using Python and OpenCV.
 2. OpenCV
 ## Algorithm:
 ### Step1:
-<br>
-
+Import the necessary packages
 
 ### Step2:
-<br>
-
+Create the Text using cv2.putText
 ### Step3:
-<br>
+Create the structuring element
 
 ### Step4:
-<br>
+Use Opening operation
 
 ### Step5:
-<br>
+Use Closing Operation
+
+
 
  
 ## Program:
+```
+Name : Vikash s
+Register no : 212222240115
+```
 
+#### Import the necessary packages
 ``` Python
-# Import the necessary packages
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+```
+
+#### Read and show the Original image
+``` Python
+image = cv2.imread("fingerprint.png")
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+plt.imshow(image_rgb)
+plt.title("Original Image")
+plt.axis("off")
+```
 
 
 
-# Create the Text using cv2.putText
+#### Use Opening operation
+```py
+
+opening_image = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
+opening_image_rgb = cv2.cvtColor(opening_image, cv2.COLOR_BGR2RGB)
+plt.imshow(opening_image_rgb)
+plt.title("Opening Operation")
+plt.axis("off")
+```
 
 
-
-# Create the structuring element
-
-
-
-# Use Opening operation
+#### Use Closing Operation
+```py
 
 
-
-
-# Use Closing Operation
-
-
-
+closing_image = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
+closing_image_rgb = cv2.cvtColor(closing_image, cv2.COLOR_BGR2RGB)
+plt.imshow(closing_image_rgb)
+plt.title("Closing Operation")
+plt.axis("off")
 
 
 ```
 ## Output:
 
-### Display the input Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+### Display the Original Image
+
+![image](https://github.com/user-attachments/assets/34ad87e0-c6cf-4085-9025-16a32dc420e4)
+
 
 ### Display the result of Opening
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+![image](https://github.com/user-attachments/assets/705ea6d0-3f5d-4012-b631-e7eb49c06c75)
+
 
 ### Display the result of Closing
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+![image](https://github.com/user-attachments/assets/36fccd7c-4c08-47d4-a1e3-2a4c051fc9f4)
 
 ## Result
 Thus the Opening and Closing operation is used in the image using python and OpenCV.
